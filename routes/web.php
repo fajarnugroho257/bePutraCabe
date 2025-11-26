@@ -20,12 +20,12 @@ use App\Http\Controllers\menu\roleMenuController;
 |
 */
 // login
-Route::middleware(['guest'])->prefix('be')->group(function () {
+Route::middleware(['guest'])->group(function () {
     Route::get('/', [LoginController::class, 'index'])->name('login');
     Route::post('/login-process', [LoginController::class, 'loginProcess'])->name('login-process');
 });
 
-Route::middleware(['auth'])->prefix('be')->group(function () {
+Route::middleware(['auth'])->group(function () {
     // dahsboard
     Route::middleware(['hasRole.page:dashboard'])->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
