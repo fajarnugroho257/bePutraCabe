@@ -8,7 +8,9 @@ use App\Models\api\Pengiriman;
 use App\Models\api\PengirimanBebanKaryawan;
 use App\Models\api\PengirimanBebanLain;
 use App\Models\api\PengirimanData;
+use App\Models\api\Saldo;
 use App\Models\api\Suplier;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -126,6 +128,12 @@ class LaporanController extends Controller
         //
     }
 
+    function generateID($dateString)
+    {
+        $date = Carbon::parse($dateString);
+        return $date->format('dmy'); // ddmmyy
+    }
+
     /**
      * Display the specified resource.
      */
@@ -138,6 +146,7 @@ class LaporanController extends Controller
         foreach ($pembelian as $key => $value) {
             $pembelian[$key]['listPembelian'] = Pembelian::where('suplier_id', '=', $value['suplier_id'])->orderBy('pembelian_nama', 'ASC')->get();
             $pembelian[$key]['ttlPembelian'] = Pembelian::where('suplier_id', $value['suplier_id'])->sum('pembelian_total');
+            $pembelian[$key]['ttlPembelianCash'] = Pembelian::where('suplier_id', $value['suplier_id'])->where('pembayaran', 'cash')->sum('pembelian_total');
         }
         //pembelian
         $group['pemBarang'] = Pembelian::select(
@@ -149,6 +158,8 @@ class LaporanController extends Controller
             ->groupBy('pembelian_nama')
             ->orderBy('pembelian_nama', 'ASC')
             ->get();
+        // total beban
+        $totalBebanLain = 0;
         // pengiriman
         $pengiriman = Pengiriman::where('pengiriman_tgl', '=', $request->suplier_tgl)
             ->orderBy('pengiriman_tgl', 'DESC')
@@ -162,6 +173,7 @@ class LaporanController extends Controller
             $bebanLain = PengirimanBebanLain::where('pengiriman_id', $value['pengiriman_id'])->get();
             $pengiriman[$key]['bebanKaryawan'] = $bebanKaryawan;
             $pengiriman[$key]['bebanLain'] = $bebanLain;
+            $totalBebanLain += PengirimanBebanLain::where('pengiriman_id', $value['pengiriman_id'])->sum('beban_value');
         }
         // pengiriman
         // $group['pengBarang'] = PengirimanData::select(
@@ -210,6 +222,10 @@ class LaporanController extends Controller
         $bbnKardus = empty($bebanKardus->totalRupiahKardus) ? 0 : $bebanKardus->totalRupiahKardus;
         $data['bbnKardus'] = $bbnKardus;
         //
+        $saldo = Saldo::where('saldo_id', $this->generateID($request->suplier_tgl))->first();
+        $data['saldo_be'] = $saldo['saldo_val'] ?? 0;
+        $data['totalBebanLain'] = $totalBebanLain;
+        // 
         return response()->json([
             'success' => true,
             'data' => $data,

@@ -10,9 +10,9 @@ use App\Models\api\Pengiriman;
 use App\Models\api\PengirimanBebanKaryawan;
 use App\Models\api\PengirimanBebanLain;
 use App\Models\api\PengirimanData;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\ImageManagerStatic as Image;
 class PengirimanController extends Controller
 {

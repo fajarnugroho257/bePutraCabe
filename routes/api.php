@@ -8,7 +8,7 @@ use App\Http\Controllers\api\PengirimanController;
 use App\Http\Controllers\api\LaporanController;
 use App\Http\Controllers\api\KaryawanController;
 use App\Http\Controllers\api\NotaController;
-
+use App\Http\Controllers\api\SaldoController;
 use App\Models\api\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -114,6 +114,10 @@ Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
     Route::post('/update-gaji-Karyawan', [KaryawanController::class, 'update_gaji']);
 
     Route::get('/nota-cetak-image/{nota_id}', [NotaController::class, 'cetak_image']);
+});
+
+Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+    Route::post('/update-saldo', action: [SaldoController::class, 'store']);
 });
 
 // Route::get('/nota-cetak-image/{nota_id}', [NotaController::class, 'cetak_image']);

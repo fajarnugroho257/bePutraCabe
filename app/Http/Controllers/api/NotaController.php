@@ -9,10 +9,10 @@ use App\Models\api\NotaData;
 use App\Models\api\Pembelian;
 use App\Models\api\Suplier;
 use Carbon\Carbon;
-use DB;
-use File;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
-use Str;
+use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class NotaController extends Controller
@@ -580,7 +580,7 @@ class NotaController extends Controller
         }
         // return $img->response('png');
     }
-
+    
     public function delete_nota(Request $request)
     {
         $detail = Nota::where('nota_id', '=', $request->nota_id)->first();
