@@ -24,19 +24,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('fe')->post('/login-api', App\Http\Controllers\api\LoginController::class);
+Route::post('/login-api', App\Http\Controllers\api\LoginController::class);
 
-Route::middleware('auth:sanctum')->prefix('fe')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('pos')->middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::prefix('pos')->middleware(['jwt.verify'])->group(function () {
     Route::get('index', [KategoriController::class, 'index']);
 });
-Route::middleware('auth:api')->prefix('fe')->get('/kategori', function (Request $request) {
+Route::middleware('auth:api')->get('/kategori', function (Request $request) {
     return $request->user();
 });
-Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::post('/add-Pembelian', [PembelianController::class, 'store']);
     Route::post('/index-Pembelian', [PembelianController::class, 'index']);
     Route::get('/detail-Pembelian/{suplier_id}', [PembelianController::class, 'show']);
@@ -46,13 +46,13 @@ Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
     Route::post('/cetak-laporan', [PembelianController::class, 'all_data']);
 });
 //
-Route::prefix('fe')->get('/test-id-Pembelian/{id}', [PembelianController::class, 'last_pembelian_id']);
+Route::get('/test-id-Pembelian/{id}', [PembelianController::class, 'last_pembelian_id']);
 
 //
-Route::prefix('fe')->get('/print', [PembelianController::class, 'print']);
+Route::get('/print', [PembelianController::class, 'print']);
 
 // pengiriman
-Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::post('/add-Pengiriman', action: [PengirimanController::class, 'store']);
     Route::post('/index-Pengiriman', [PengirimanController::class, 'index']);
     Route::get('/detail-Pengiriman/{pengiriman_id}', [PengirimanController::class, 'show']);
@@ -70,12 +70,12 @@ Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
 });
 
 // laporan
-Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::post('/index-Laporan', [LaporanController::class, 'index']);
     Route::post('/detail-Laporan', [LaporanController::class, 'show']);
 });
 // Karyawan
-Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::get('/index-Karyawan', [KaryawanController::class, 'index']);
     Route::post('/add-Karyawan', action: [KaryawanController::class, 'store']);
     Route::get('/detail-Karyawan/{id}', [KaryawanController::class, 'show']);
@@ -87,14 +87,14 @@ Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
 });
 
 // kardus
-Route::middleware(['jwt.verify'])->prefix('fe')->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::get('/index-Kardus', [KardusController::class, 'index']);
     Route::get('/detail-Kardus/{id}', [KardusController::class, 'show']);
     Route::post('/edit-Kardus', [KardusController::class, 'update']);
 });
 
 // nota
-Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::post('/make-draft-nota', action: [NotaController::class, 'store']);
     Route::post('/index-draft-nota', action: [NotaController::class, 'index']);
     Route::get('/detail-draft-nota/{id}', action: [NotaController::class, 'show']);
@@ -107,7 +107,7 @@ Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
 
 });
 
-Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::get('/logout', action: [LoginController::class, 'logout']);
     Route::get('/non-detail-draft-nota/{id}', action: [NotaController::class, 'show']);
     Route::get('/gaji-Karyawan/{id}/{month}/{thn}', [KaryawanController::class, 'show_gaji']);
@@ -116,7 +116,7 @@ Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
     Route::get('/nota-cetak-image/{nota_id}', [NotaController::class, 'cetak_image']);
 });
 
-Route::middleware(['jwt.verify'])->prefix('fe')->group(function () {
+Route::middleware(['jwt.verify'])->group(function () {
     Route::post('/update-saldo', action: [SaldoController::class, 'store']);
 });
 
