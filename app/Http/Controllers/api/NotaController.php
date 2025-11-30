@@ -287,7 +287,7 @@ class NotaController extends Controller
 
     public function cetak_image(string $nota_id)
     {
-        return response()->json(['status' => file_exists(public_path('fonts/arial.ttf'))]);
+        // return response()->json(['status' => file_exists(public_path('fonts/Roboto-Regular.ttf'))]);
         // 
         $detail = Nota::select('*')->with('nota_bayar')->where('nota_id', $nota_id)->first();
         if (!empty($detail)) {
@@ -334,21 +334,21 @@ class NotaController extends Controller
         $img = Image::canvas($width, $height, '#ffffff');
         // Tambahkan keterangan di atas tabel
         $img->text('Tanggal Cetak', 10, 25, function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(16);
             $font->color('#000000');
             $font->align('left'); // Center secara horizontal
             $font->valign('middle'); // Center secara vertikal
         });
         $img->text(':', 120, 20, function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(16);
             $font->color('#000000');
             $font->align('left'); // Center secara horizontal
             $font->valign('middle'); // Center secara vertikal
         });
         $img->text(date("d F Y H:i:s", strtotime(date('Y-m-d H:i:s'))), 150, 25, function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(16);
             $font->color('#000000');
             $font->align('left'); // Center secara horizontal
@@ -360,49 +360,49 @@ class NotaController extends Controller
             $draw->border(1, '#000000'); // Border header
         });
         $img->text('No', 10, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text('Suplier', 50, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text('Tanggal', 120, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text('Barang', 240, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text('Tonase', 320, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text('Harga', 430, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text('Total', 530, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text('SubTotal', 660, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(14);
             $font->color('#000000');
             $font->valign('middle');
@@ -421,13 +421,13 @@ class NotaController extends Controller
         $tempSuplier = '';
         foreach ($pembelian->nota_data as $key => $value) {
             $img->text($no++, 10, $yPosition + ($rowHeight / 2), function ($font) {
-                $font->file(public_path('fonts/arial.ttf'));
+                $font->file(public_path('fonts/Roboto-Regular.ttf'));
                 $font->size(12);
                 $font->color('#000000');
                 $font->valign('middle');
             });
             $img->text($value->suplier->suplier_nama, 50, $yPosition + ($rowHeight / 2), function ($font) {
-                $font->file(public_path('fonts/arial.ttf'));
+                $font->file(public_path('fonts/Roboto-Regular.ttf'));
                 $font->size(12);
                 $font->color('#000000');
                 $font->valign('middle');
@@ -443,31 +443,31 @@ class NotaController extends Controller
                     });
                 }
                 $img->text(date("d F Y", strtotime(date($value->suplier->suplier_tgl))), 120, $yPosition + ($rowHeight / 2), function ($font) {
-                    $font->file(public_path('fonts/arial.ttf'));
+                    $font->file(public_path('fonts/Roboto-Regular.ttf'));
                     $font->size(12);
                     $font->color('#000000');
                     $font->valign('middle');
                 });
                 $img->text($pembelian->pembelian_nama, 240, $yPosition + ($rowHeight / 2), function ($font) {
-                    $font->file(public_path('fonts/arial.ttf'));
+                    $font->file(public_path('fonts/Roboto-Regular.ttf'));
                     $font->size(12);
                     $font->color('#000000');
                     $font->valign('middle');
                 });
                 $img->text($pembelian->pembelian_kotor . " || " . $pembelian->pembelian_bersih, 320, $yPosition + ($rowHeight / 2), function ($font) {
-                    $font->file(public_path('fonts/arial.ttf'));
+                    $font->file(public_path('fonts/Roboto-Regular.ttf'));
                     $font->size(12);
                     $font->color('#000000');
                     $font->valign('middle');
                 });
                 $img->text("Rp " . number_format($pembelian->pembelian_harga, 0, ',', '.'), 430, $yPosition + ($rowHeight / 2), function ($font) {
-                    $font->file(public_path('fonts/arial.ttf'));
+                    $font->file(public_path('fonts/Roboto-Regular.ttf'));
                     $font->size(12);
                     $font->color('#000000');
                     $font->valign('middle');
                 });
                 $img->text("Rp " . number_format($pembelian->pembelian_total, 0, ',', '.'), 530, $yPosition + ($rowHeight / 2), function ($font) {
-                    $font->file(public_path('fonts/arial.ttf'));
+                    $font->file(public_path('fonts/Roboto-Regular.ttf'));
                     $font->size(12);
                     $font->color('#000000');
                     $font->valign('middle');
@@ -486,14 +486,14 @@ class NotaController extends Controller
                     $ttlDatas = count($value->suplier->pembelian);
                     if ($ttlDatas == 1) {
                         $img->text("Rp " . number_format($subTtlPembelian, 0, ',', '.'), 650, $yPosition + ($rowHeight / 2), function ($font) {
-                            $font->file(public_path('fonts/arial.ttf'));
+                            $font->file(public_path('fonts/Roboto-Regular.ttf'));
                             $font->size(12);
                             $font->color('#000000');
                             $font->valign('middle');
                         });
                     } else {
                         $img->text("Rp " . number_format($subTtlPembelian, 0, ',', '.'), 650, $yPosition + ($rowHeight * $ttlDatas / 2), function ($font) {
-                            $font->file(public_path('fonts/arial.ttf'));
+                            $font->file(public_path('fonts/Roboto-Regular.ttf'));
                             $font->size(12);
                             $font->color('#000000');
                             $font->valign('middle');
@@ -512,13 +512,13 @@ class NotaController extends Controller
             $draw->border(1, '#000000');
         });
         $img->text("TOTAL", 530, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(12);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text("Rp " . number_format($grand_ttl_pembelian, 0, ',', '.'), 655, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(12);
             $font->color('#000000');
             $font->valign('middle');
@@ -531,19 +531,19 @@ class NotaController extends Controller
                 $draw->border(1, '#000000');
             });
             $img->text("TU", 530, $yPosition + ($rowHeight / 2), function ($font) {
-                $font->file(public_path('fonts/arial.ttf'));
+                $font->file(public_path('fonts/Roboto-Regular.ttf'));
                 $font->size(12);
                 $font->color('#000000');
                 $font->valign('middle');
             });
             $img->text("Rp " . number_format($row->bayar_value, 0, ',', '.'), 655, $yPosition + ($rowHeight / 2), function ($font) {
-                $font->file(public_path('fonts/arial.ttf'));
+                $font->file(public_path('fonts/Roboto-Regular.ttf'));
                 $font->size(12);
                 $font->color('#000000');
                 $font->valign('middle');
             });
             $img->text(date("d M Y H:i:s", strtotime($row->updated_at)), 770, $yPosition + ($rowHeight / 2), function ($font) {
-                $font->file(public_path('fonts/arial.ttf'));
+                $font->file(public_path('fonts/Roboto-Regular.ttf'));
                 $font->size(12);
                 $font->color('#000000');
                 $font->valign('middle');
@@ -553,13 +553,13 @@ class NotaController extends Controller
         }
 
         $img->text('Kekurangan Pembayaran', 490, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(12);
             $font->color('#000000');
             $font->valign('middle');
         });
         $img->text("Rp " . number_format($grand_ttl_pembelian - $ttl_cicil, 0, ',', '.'), 655, $yPosition + ($rowHeight / 2), function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
+            $font->file(public_path('fonts/Roboto-Regular.ttf'));
             $font->size(12);
             $font->color('#000000');
             $font->valign('middle');
