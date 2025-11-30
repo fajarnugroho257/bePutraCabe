@@ -287,6 +287,8 @@ class NotaController extends Controller
 
     public function cetak_image(string $nota_id)
     {
+        return response()->json(['status' => file_exists(public_path('fonts/arial.ttf'))]);
+        // 
         $detail = Nota::select('*')->with('nota_bayar')->where('nota_id', $nota_id)->first();
         if (!empty($detail)) {
             $ttl_pembelian = DB::selectOne("SELECT a.nota_id, SUM(d.pembelian_total) AS 'pembelian_total'
