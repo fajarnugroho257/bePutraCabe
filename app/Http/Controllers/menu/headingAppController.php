@@ -34,7 +34,7 @@ class headingAppController extends Controller
     {
         $request->validate([
             'app_heading_name' => 'required',
-            'app_heading_icon' => 'required',
+            // 'app_heading_icon' => 'required',
         ]);
         $app_heading_id = $this->last_heading_id();
         if ($app_heading_id) {

@@ -16,6 +16,7 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    @yield('plugin-css')
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -54,6 +55,7 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- Select2 -->
     <script src="../../plugins/select2/js/select2.full.min.js"></script>
+    @yield('plugin-js')
     <script>
         $(function () {
             //Initialize Select2 Elements
