@@ -3,7 +3,63 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Navbar Putra Cabe - Clip-Path Transition</title>
+        <title>{{ $title_meta }}</title>
+        <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/png">
+        <!-- Google tag (gtag.js) -->
+
+        {{-- verification --}}
+        
+        <meta name="author" content="https://www.instagram.com/putracabe77" />
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ $title_meta }}">
+        <meta name="twitter:description" content="{{ $meta_description }}">
+        <meta name="twitter:image" content="https://putracabe.com/image/produk_kami/title/bata%20tempel%20dengan%20motif%20derabut%20kelapa%20warna%20klasik%20natural.jpg">
+        <meta property="og:see_also" content="https://www.instagram.com/ag.batatempel/" />
+        <link rel="canonical" href="{{ url()->current() }}">
+        <meta property="og:type" content="place" />
+        <meta property="og:title" content="{{ $title_meta }}" />
+        <meta property="og:description" content="{{ $meta_description }}" />
+        <meta property="og:image" content="https://putracabe.com/image/produk_kami/title/bata%20tempel%20dengan%20motif%20derabut%20kelapa%20warna%20klasik%20natural.jpg" />
+        <meta property="og:url" content="https://putracabe.com">
+        <meta property="place:location:latitude" content="-7.467738" />
+        <meta property="place:location:longitude" content="110.194969" />
+        <meta property="place:location:street-address" content="Jalan raya bandongan, magelang, desa trasan, dusun paingan, kecamatan bandongan" />
+        <meta property="place:location:locality" content="Kabupaten Magelang" />
+        <meta property="place:location:region" content="Jawa Tengah" />
+        <meta property="place:location:postal-code" content="56161" />
+        <meta property="place:location:country" content="indonesia" />
+        <meta property="og:locale" content="id_ID" />
+        <meta property="og:site_name" content="Puta Cabe Perusahaan Perdagangan Cabai
+" />
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Place",
+            "name": "AG Expo Bata Tempel",
+            "description": "{{ $meta_description }}",
+            "image": "https://putracabe.com/image/produk_kami/title/bata%20tempel%20dengan%20motif%20derabut%20kelapa%20warna%20klasik%20natural.jpg",
+            "url": "https://putracabe.com",
+            "telephone": "+{{ $no_wa }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jalan raya bandongan, magelang, desa trasan, dusun paingan, kecamatan bandongan",
+                "addressLocality": "Kabupaten Magelang",
+                "addressRegion": "Jawa Tengah",
+                "postalCode": "56161",
+                "addressCountry": "indonesia"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -7.467738,
+                "longitude": 110.194969
+            },
+            "hasMap": "https://www.google.com/maps?q=-7.467738,110.194969"
+            }
+        </script>
+        <meta name="keywords" content="">
+        <meta name="description" content="{{ $meta_description }}">
+        <meta property="og:description" content="{{ $meta_description }}">
+        <meta name="news_keywords" content="">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,12 +77,8 @@
                 <div class="flex justify-between h-20 items-center">
                     <div class="flex items-center">
                         <img src="{{ asset('/images/putraCabe.png') }}" alt="PutraCabe" class="w-20 md:w-28">
-                        {{-- <h1 class="font-bold">Putra Cabe</h1> --}}
                     </div>
                     
-                    {{-- <a href="#" class="text-2xl font-serif font-bold text-sage">
-                        🌿 Putra Cabe
-                    </a> --}}
                     <div class="hidden md:flex space-x-6 text-lg font-medium items-center">
                         <a href="{{ route('home') }}" class="text-gray-600 hover:text-sage transition @if ($title == 'home') font-bold @endif">Home</a>
                         <a href="{{ route('katalog') }}" class="text-gray-600 hover:text-sage transition @if ($title == 'katalog') font-bold @endif">Katalog Produk</a>

@@ -11,9 +11,11 @@ use App\Http\Controllers\menu\rolePenggunaController;
 use App\Http\Controllers\menu\roleMenuController;
 use App\Http\Controllers\website\AboutMeController;
 use App\Http\Controllers\website\ArtikelController;
+use App\Http\Controllers\website\AuthorController;
 use App\Http\Controllers\website\BannerController;
 use App\Http\Controllers\website\FaqController;
 use App\Http\Controllers\website\GaleryController;
+use App\Http\Controllers\website\KategoriController;
 use App\Http\Controllers\website\OrderController;
 use App\Http\Controllers\website\PreferenceController;
 use App\Http\Controllers\website\ProdukController;
@@ -21,6 +23,7 @@ use App\Http\Controllers\website\TestimoniController;
 use App\Http\Controllers\website\VisiMisiController;
 use App\Http\Controllers\website\WebsiteController;
 use App\Http\Controllers\website\WhyChooseMeController;
+use App\Models\website\Author;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +43,7 @@ Route::get('/tentang-kami', [WebsiteController::class, 'about'])->name('about');
 Route::get('/cara-pesan', [WebsiteController::class, 'order'])->name('order');
 Route::get('/kontak-kami', [WebsiteController::class, 'kontak'])->name('kontak');
 Route::get('/artikel', [WebsiteController::class, 'artikel'])->name('artikel');
+Route::get('/artikel-search', [WebsiteController::class, 'cari_artikel'])->name('cariArtikel');
 Route::get('/artikel/{slug}', [WebsiteController::class, 'artikel_detail'])->name('artikel_detail');
 
 
@@ -195,6 +199,26 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/edit-artikel-data/{slug}', [ArtikelController::class, 'edit'])->name('editArtikelData');
         Route::post('/process-edit-artikel-data/{slug}', [ArtikelController::class, 'update'])->name('processEditArtikelData');
         Route::get('/process-delete-artikel-data/{slug}', [ArtikelController::class, 'destroy'])->name('processDeleteArtikelData');
+    });
+
+    Route::middleware(['hasRole.page:artikelKategori'])->group(function () {
+        Route::get('/artikel-kategori', [KategoriController::class, 'index'])->name('artikelKategori');
+        Route::post('/process-add-artikel-kategori', [KategoriController::class, 'store'])->name('processAddArtikelKategori');
+        Route::post('/process-edit-kategori', [KategoriController::class, 'update'])->name('processEditArtikelKategori');
+        Route::get('/process-delete-kategori/{slug}', [KategoriController::class, 'destroy'])->name('processDeleteArtikelKategori');
+
+        Route::get('/get-detail-kategori', [KategoriController::class, 'show'])->name('getDetailKategori');
+
+        
+    });
+
+    Route::middleware(['hasRole.page:artikelAuthor'])->group(function () {
+        Route::get('/artikel-author', [AuthorController::class, 'index'])->name('artikelAuthor');
+        Route::post('/process-add-artikel-author', [AuthorController::class, 'store'])->name('processAddArtikelAuthor');
+        Route::post('/process-edit-author', [AuthorController::class, 'update'])->name('processEditArtikelAuthor');
+        Route::get('/process-delete-author/{slug}', [AuthorController::class, 'destroy'])->name('processDeleteArtikelAuthor');
+
+        Route::get('/get-detail-author', [AuthorController::class, 'show'])->name('getDetailAuthor');
     });
 
     /* END YOUR ROUTE APLICATION */

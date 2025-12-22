@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\baseController\AppController;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class LoginController extends Controller

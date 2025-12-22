@@ -22,10 +22,10 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{ asset('index2.html') }}" class="h1"><b>{{ env('APP_NAME') }}</b></a>
+                <a href="{{ asset('index2.html') }}" class="h1"><b>Admin Web</b></a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">PutraCabe</p>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>

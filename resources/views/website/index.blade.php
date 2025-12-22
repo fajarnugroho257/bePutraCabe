@@ -1,5 +1,5 @@
 @include('website.header')
-<header class="">
+{{-- <header class="">
     <div style="background-image: url('/images/hero-6.png')" class="bg-cover bg-center h-[250px] lg:h-[630px] pt-24 lg:pt-[350px]">
         <div class="bg-green-800/80 lg:bg-green-800/90 w-fit py-2 px-3 rounded-sm md:rounded-md lg:rounded-lg transparan text-white ml-2 md:ml-16 lg:ml-40">
             <h1 class="text-lg max-w-72 md:max-w-80 lg:max-w-[550px] md:text-xl lg:text-4xl font-serif leading-5 md:leading-6 lg:leading-tight">Cabai Segar Pilihan Petani Lokal. Kualitas Pedas Terbaik Siap Kirim ke Seluruh Jawa & Bali</h1>
@@ -12,6 +12,78 @@
             <div>- Jaminan Kualitas</div>
             <div>- Pengiriman Cepat</div>
             <div>- Harga Terbaik</div>
+        </div>
+    </div>
+</header> --}}
+<header class="relative bg-white overflow-hidden">
+    <div class="absolute top-0 right-0 -translate-y-12 translate-x-12 blur-3xl opacity-20 pointer-events-none">
+    <div class="aspect-square w-[500px] bg-red-600 rounded-full"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-8 lg:py-16 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+        
+        <div class="lg:w-1/2 text-center lg:text-left">
+            <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-red-600 uppercase bg-red-50 rounded-full">
+            Partner B2B Terpercaya
+            </span>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            Suplai Cabai Segar Langsung dari <span class="text-red-600">Sumbernya.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
+            <strong class="text-gray-900">Putra Cabe</strong> adalah perusahaan yang bergerak di bidang perdagangan dan distribusi cabai segar untuk kebutuhan pasar B2B seperti pedagang besar, restoran, UMKM kuliner, dan industri makanan.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a href="#cta" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition duration-300 shadow-lg shadow-red-200 text-center">
+                Pesan Sekarang
+            </a>
+            <a href="{{ route('katalog') }}" class="px-8 py-4 bg-white border-2 border-gray-200 hover:border-red-600 text-gray-700 hover:text-red-600 font-bold rounded-xl transition duration-300 text-center">
+                Katalog Produk
+            </a>
+            </div>
+
+            <div class="mt-10 pt-10 border-t border-gray-200 grid grid-cols-3 gap-4">
+            <div>
+                <p class="text-2xl font-bold text-gray-900">100%</p>
+                <p class="text-sm text-gray-500">Cabai Segar</p>
+            </div>
+            <div>
+                <p class="text-2xl font-bold text-gray-900">Kontinyu</p>
+                <p class="text-sm text-gray-500">Stok Aman</p>
+            </div>
+            <div>
+                <p class="text-2xl font-bold text-gray-900">B2B</p>
+                <p class="text-sm text-gray-500">Harga Kompetitif</p>
+            </div>
+            </div>
+        </div>
+        <div class="lg:w-1/2 relative">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+                src="https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&q=80&w=800" 
+                alt="Distribusi Cabai Segar Putra Cabe" 
+                class="w-full h-[400px] lg:h-[550px] object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block max-w-[240px]">
+            <div class="flex items-center gap-4">
+                <div class="bg-green-100 p-3 rounded-full">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                </div>
+                <div>
+                <p class="text-sm font-bold text-gray-900">Kualitas Terjamin</p>
+                <p class="text-xs text-gray-500">Lolos kontrol kualitas ketat</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
         </div>
     </div>
 </header>

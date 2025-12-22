@@ -1,6 +1,6 @@
     {{-- <div class="px-5 p-5 md:pb-5 md:pt-14 bg-gray-800 text-white md:flex md:justify-between md:px-[175px] md:gap-7" style="background: #FFF,url(images/bg-footer.png); background-size: cover; background-attachment: fixed;background-position: center;background-repeat: no-repeat;" > --}}
         <div class="px-5 p-5 md:pb-5 md:pt-14 bg-gray-800 text-white md:flex md:justify-between md:px-[175px] md:gap-7" >
-            <div class="grid grid-cols-1 md:flex md:justify-around mb-10 w-full">
+            <div class="grid grid-cols-1 md:flex md:justify-between mb-10 w-full">
                 <div class="">
                     <div class="mb-3 md:justify-start">
                         <h4 class="text-3xl font-semibold font-serif">PutraCabe</h4>
@@ -23,18 +23,18 @@
                 <div class="mt-8 md:mt-0">
                     <h3 class="font-semibold text-base mb-3"><span class="border-b-2 border-white">Maps</span></h3>
                     <iframe class="w-full md:h-60 y-2"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.5331514791992!2d110.16992813967286!3d-7.567750699999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8ddb6981306d%3A0xc5494e9e52923ba1!2sAG%20Expo%20Bata%20Tempel!5e0!3m2!1sid!2sid!4v1730794766785!5m2!1sid!2sid"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3955.9774846538553!2d110.19239427500183!3d-7.467737692543872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjgnMDMuOSJTIDExMMKwMTEnNDEuOSJF!5e0!3m2!1sid!2sid!4v1766397904125!5m2!1sid!2sid"
+                        width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="mt-8 md:mt-0  text-[16px] md:text-start md:flex md:justify-center">
+                {{-- <div class="mt-8 md:mt-0  text-[16px] md:text-start md:flex md:justify-center">
                     <div class="footer">
                         <h3 class="font-semibold text-base mb-3"><span class="border-b-2 border-white">Katalog Kami</span></h3>
                         <div class="grid gap-y-2 font-normal">
-                            <a href="{{ route('home') }}" class="text-sm hover:text-colorWood transition delay-100 duration-300 ease-in-out"><i class="fa fa-chevron-right text-xs"></i> Semua Produk</a>
+                            <a href="{{ route('katalog') }}" class="text-sm hover:text-colorWood transition delay-100 duration-300 ease-in-out"><i class="fa fa-chevron-right text-xs"></i> Semua Produk</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="mt-8 md:mt-0 text-[16px] md:text-start md:flex md:justify-center">
                     <div class="footer">
                         <h3 class="font-semibold text-base mb-3"><span class="border-b-2 border-white">Quick Link</span></h3>
