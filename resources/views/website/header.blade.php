@@ -29,13 +29,12 @@
         <meta property="place:location:postal-code" content="56161" />
         <meta property="place:location:country" content="indonesia" />
         <meta property="og:locale" content="id_ID" />
-        <meta property="og:site_name" content="Puta Cabe Perusahaan Perdagangan Cabai
-" />
+        <meta property="og:site_name" content="Puta Cabe Perusahaan Perdagangan Cabai" />
         <script type="application/ld+json">
             {
             "@context": "https://schema.org",
             "@type": "Place",
-            "name": "AG Expo Bata Tempel",
+            "name": "Puta Cabe Perusahaan Perdagangan Cabai",
             "description": "{{ $meta_description }}",
             "image": "https://putracabe.com/image/produk_kami/title/bata%20tempel%20dengan%20motif%20derabut%20kelapa%20warna%20klasik%20natural.jpg",
             "url": "https://putracabe.com",

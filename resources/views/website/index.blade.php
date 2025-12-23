@@ -62,11 +62,7 @@
         </div>
         <div class="lg:w-1/2 relative">
             <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-                src="https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&q=80&w=800" 
-                alt="Distribusi Cabai Segar Putra Cabe" 
-                class="w-full h-[400px] lg:h-[550px] object-cover"
-            />
+            <img src="{{ asset('images/banner.png') }}" alt="Distribusi Cabai Segar Putra Cabe"  class="w-full h-[400px] lg:h-[550px] object-cover"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block max-w-[240px]">
