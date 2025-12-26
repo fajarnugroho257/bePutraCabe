@@ -4,6 +4,7 @@ namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
 use App\Models\website\Artikel;
+use App\Models\website\Banner;
 use App\Models\website\Faq;
 use App\Models\website\Galery;
 use App\Models\website\Kategori;
@@ -39,6 +40,7 @@ class WebsiteController extends Controller
         $data['no_wa'] = Pref::where('pref_name', 'no_wa')->first();
         $data['rs_galery'] = Galery::get();
         $data['rs_produk'] = Produk::get();
+        $data['rs_banner'] = Banner::orderBy('banner_urut')->get();
         // dd($data);
         return view('website.index', $data);
     }
@@ -61,8 +63,9 @@ class WebsiteController extends Controller
             return redirect()->route('home');
         }
         $data['title'] = 'katalog';
+        $data['title_meta'] = 'Produk ' . $detail->produk_nama . '| Putracabe';
+        $data['meta_description'] = 'Produk ' . $detail->produk_short_desc . '| Putracabe';
         $data['no_wa'] = Pref::where('pref_name', 'no_wa')->first();
-
         $data['rs_produk'] = Produk::where('id', '<>', $detail->id)->get();
         $data['detail'] = $detail;
         $data['rs_image'] = Produk_image::where('produk_id', $detail->id)->get();

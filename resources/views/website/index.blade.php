@@ -147,7 +147,7 @@
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-8">
             @foreach ($rs_produk as $produk)
                 <div class="bg-white rounded-md md:rounded-xl shadow-lg overflow-hidden border border-gray-100 transition duration-300 hover:shadow-2xl">
-                    <img class="w-full h-48 object-cover" src="images/hero-6.png" alt="Bayam Organik"/>
+                    <img class="w-full h-48 object-cover" src="{{ $produk->produk_path . "/" . $produk->produk_image }}" alt="{{ $produk->produk_nama }}"/>
                     <div class="p-5">
                         {{-- <span class="inline-block bg-black/10 text-sage text-xs px-3 py-1 rounded-full font-medium mb-2"></span> --}}
                         <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1">{{ $produk->produk_nama }}</h3>
