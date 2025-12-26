@@ -24,25 +24,25 @@
         <div class="flex flex-col lg:flex-row items-center gap-12">
         
         <div class="lg:w-1/2 text-center lg:text-left">
-            <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-red-600 uppercase bg-red-50 rounded-full">
+            <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-red-600 uppercase bg-red-50 rounded-full" data-aos="fade-left" data-aos-duration="1500">
             Partner B2B Terpercaya
             </span>
             
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6" data-aos="fade-left" data-aos-duration="1500">
             Suplai Cabai Segar Langsung dari <span class="text-red-600">Sumbernya.</span>
             </h1>
             
-            <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-8" data-aos="fade-right" data-aos-duration="1500">
             <strong class="text-gray-900">Putra Cabe</strong> adalah perusahaan yang bergerak di bidang perdagangan dan distribusi cabai segar untuk kebutuhan pasar B2B seperti pedagang besar, restoran, UMKM kuliner, dan industri makanan.
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <a href="#cta" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition duration-300 shadow-lg shadow-red-200 text-center">
-                Pesan Sekarang
-            </a>
-            <a href="{{ route('katalog') }}" class="px-8 py-4 bg-white border-2 border-gray-200 hover:border-red-600 text-gray-700 hover:text-red-600 font-bold rounded-xl transition duration-300 text-center">
-                Katalog Produk
-            </a>
+                <a href="#cta" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition duration-300 shadow-lg shadow-red-200 text-center">
+                    Pesan Sekarang
+                </a>
+                <a href="{{ route('katalog') }}" class="px-8 py-4 bg-white border-2 border-gray-200 hover:border-red-600 text-gray-700 hover:text-red-600 font-bold rounded-xl transition duration-300 text-center">
+                    Katalog Produk
+                </a>
             </div>
 
             <div class="mt-10 pt-10 border-t border-gray-200 grid grid-cols-3 gap-4">
@@ -61,9 +61,9 @@
             </div>
         </div>
         <div class="lg:w-1/2 relative">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-left" data-aos-duration="1500">
             <img src="{{ asset('images/banner.png') }}" alt="Distribusi Cabai Segar Putra Cabe"  class="w-full h-[400px] lg:h-[550px] object-cover"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block max-w-[240px]">
             <div class="flex items-center gap-4">
@@ -83,7 +83,7 @@
         </div>
     </div>
 </header>
-<section class="bg-gray-100/60 py-10 md:py-20 ">
+<section class="bg-gray-100/60 py-10 md:py-20" data-aos="fade-up" data-aos-duration="1500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header class="text-center mb-7 md:mb-10 lg:mb-12">
             <h2 class="text-xs font-semibold uppercase tracking-widest text-red-600 mb-2">KOMITMEN KAMI</h2>
@@ -121,7 +121,7 @@
         </div>
     </div>
 </section>
-<section id="keunggulan" class="py-10 md:py-20">
+<section id="keunggulan" class="py-10 md:py-20" data-aos="fade-down" data-aos-duration="1500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-2xl md:text-4xl font-serif font-bold mb-2 md:mb-4 text-sage">Mengapa Memilih Kami ?</h2>
         <p class="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto mb-5 md:mb-14">Komitmen kami pada kualitas, transparansi, dan dukungan terhadap petani lokal.</p>
@@ -139,37 +139,28 @@
         </div>
     </div>
 </section>
-<section id="katalog" class="py-10 md:py-20 bg-gray-100/60">
+<section id="katalog" class="py-10 md:py-20 bg-gray-100/60" data-aos="fade-up" data-aos-duration="1500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-center w-full text-2xl md:text-4xl font-serif font-bold mb-2 md:mb-4 text-sage">Produk Cabai Segar</h2>
         <p class="text-center text-sm md:text-lg text-gray-600 max-w-3xl mx-auto mb-5 md:mb-10">Barbagai Produk Pilihan dengan Kualitas Maksimal.</p>
         
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-8">
-            @foreach ($rs_produk as $produk)
-                <div class="bg-white rounded-md md:rounded-xl shadow-lg overflow-hidden border border-gray-100 transition duration-300 hover:shadow-2xl">
-                    <img class="w-full h-48 object-cover" src="{{ $produk->produk_path . "/" . $produk->produk_image }}" alt="{{ $produk->produk_nama }}"/>
-                    <div class="p-5">
-                        {{-- <span class="inline-block bg-black/10 text-sage text-xs px-3 py-1 rounded-full font-medium mb-2"></span> --}}
-                        <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1">{{ $produk->produk_nama }}</h3>
-                        <p class="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-4">Rp {{ number_format($produk->produk_harga, 0, ', ', '.') }} / Kg</p>
-                        <a href="{{ route('katalogDetail', $produk->slug) }}" class="w-full block text-sm md:text-base text-center bg-red-600 text-white py-1 md:py-2 rounded-lg hover:bg-red-500 transition">
-                            Lihat Selengkapnya
-                        </a>
-                    </div>
-                </div>
-            @endforeach
-            
-            {{-- <div class="bg-white rounded-md md:rounded-xl shadow-lg overflow-hidden border border-gray-100 transition duration-300 hover:shadow-2xl">
-                <img class="w-full h-48 object-cover" src="images/hero-6.png" alt="Bayam Organik"/>
-                <div class="p-5">
-                    <span class="inline-block bg-black/10 text-sage text-xs px-3 py-1 rounded-full font-medium mb-2">Sayuran Daun</span>
-                    <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1">Lombok Rawit Merah Premium</h3>
-                    <p class="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-4">Rp 55.000 / Kg</p>
-                    <a href="/" class="w-full block text-sm md:text-base text-center bg-red-600 text-white py-1 md:py-2 rounded-lg hover:bg-red-500 transition">
-                        Lihat Selengkapnya
-                    </a>
-                </div>
-            </div> --}}
+        {{-- <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-8"> --}}
+        <div class="swiper mySwiperProduk">
+            <div class="swiper-wrapper">
+                @foreach ($rs_produk as $produk)
+                        <div class="swiper-slide bg-white rounded-md md:rounded-xl shadow-lg overflow-hidden border border-gray-100 transition duration-300 hover:shadow-2xl">
+                            <img class="w-full h-48 object-cover" src="{{ $produk->produk_path . "/" . $produk->produk_image }}" alt="{{ $produk->produk_nama }}"/>
+                            <div class="p-5">
+                                {{-- <span class="inline-block bg-black/10 text-sage text-xs px-3 py-1 rounded-full font-medium mb-2"></span> --}}
+                                <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1">{{ $produk->produk_nama }}</h3>
+                                <p class="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-4">Rp {{ number_format($produk->produk_harga, 0, ', ', '.') }} / Kg</p>
+                                <a href="{{ route('katalogDetail', $produk->slug) }}" class="w-full block text-sm md:text-base text-center bg-red-600 text-white py-1 md:py-2 rounded-lg hover:bg-red-500 transition">
+                                    Lihat Selengkapnya
+                                </a>
+                            </div>
+                        </div>
+                @endforeach
+            </div>
         </div>
         <div class="text-center mt-12">
             <a href="{{ route('katalog') }}" class="text-base lg:text-lg font-semibold text-sage hover:text-terracotta transition border-b border-sage hover:border-terracotta">
@@ -178,7 +169,7 @@
         </div>
     </div>
 </section>
-<section id="testimoni" class="py-10 md:py-20">
+<section id="testimoni" class="py-10 md:py-20" data-aos="fade-up" data-aos-duration="1500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-center w-full text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-10 text-sage">Kata Mereka Tentang Kami</h2>
         {{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> --}}
@@ -197,7 +188,7 @@
         </div>
     </div>
 </section>
-<section id="galeri" class="py-10 md:py-20 bg-gray-100/60">
+<section id="galeri" class="py-10 md:py-20 bg-gray-100/60" data-aos="fade-up" data-aos-duration="1500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-center w-full text-2xl md:text-4xl font-serif font-bold mb-6 md:mb-14 text-sage">Galeri Foto Kami</h2>
         {{-- <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 lg:gap-8"> --}}
@@ -214,7 +205,7 @@
         </div>
     </div>
 </section>
-<section id="faq" class="py-10 md:py-20 bg-white">
+<section id="faq" class="py-10 md:py-20 bg-white" data-aos="fade-up" data-aos-duration="1500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl md:text-4xl font-serif font-bold mb-3 md:mb-8 text-sage">FAQ</h2>
         <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-5">
@@ -239,7 +230,7 @@
         </div> --}}
     </div>
 </section>
-<section id="cta" class="py-20 bg-gray-100/60">
+<section id="cta" class="py-20 bg-gray-100/60" data-aos="fade-up" data-aos-duration="1500">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-2xl md:text-4xl font-serif font-bold mb-4">{{ $cta_title->pref_value }}</h2>
         <p class="text-sm md:text-base lg:text-lg mb-10 opacity-90">{{ $cta_desc->pref_value }}</p>
@@ -250,6 +241,31 @@
 </section>
 @section('javascriptWebsite')
 <script>
+
+    var swiper = new Swiper(".mySwiperProduk", {
+        navigation: {
+            nextEl: ".prod-right",
+            prevEl: ".prod-left",
+        },
+        autoplay: {
+            delay: 3500,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            769: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            415: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+        }
+    });
+
     var swiper = new Swiper(".mySwiperTesti", {
         navigation: {
             nextEl: ".prod-right",

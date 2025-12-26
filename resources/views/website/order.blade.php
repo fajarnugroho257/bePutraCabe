@@ -8,7 +8,7 @@
             <li class="text-red-600 font-medium" aria-current="page">Cara Pesan</li>
         </ol>
     </nav>
-    <section id="cara-order" class="py-5 md:pb-16 bg-white">
+    <section id="cara-order" class="py-5 md:pb-16 bg-white" data-aos="fade-left" data-aos-duration="1500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-8 text-center">Cara Pemesanan yang Mudah</h2>
             <ol class="grid grid-cols-1 sm:grid-cols-3 gap-1 md:gap-8 text-left">

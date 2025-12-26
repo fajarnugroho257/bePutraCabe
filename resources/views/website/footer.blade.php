@@ -64,6 +64,11 @@
                 <i class="mx-auto text-sm md:text-lg fa fa-arrow-up"></i>
             </div>
         </div>
+        {{-- aos --}}
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </body>

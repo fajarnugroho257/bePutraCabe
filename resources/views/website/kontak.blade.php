@@ -8,7 +8,7 @@
             <li class="text-red-600 font-medium" aria-current="page">Kontak Kami</li>
         </ol>
     </nav>
-    <section id="kontak-kami" class="py-5 md:pb-16 bg-white">
+    <section id="kontak-kami" class="py-5 md:pb-16 bg-white" data-aos="fade-down" data-aos-duration="1500">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-8 text-sage">Hubungi Kami</h2>
             <p class="">Kami siap melayani Anda. Jangan ragu untuk menghubungi kami melalui telepon, WhatsApp, atau media sosial.</p>
