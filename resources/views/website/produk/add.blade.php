@@ -138,6 +138,7 @@
                         <div class="form-group">
                             <label>Gambar Lainnya</label>
                             <input type="file" value="{{ old('file') }}" multiple name="file[]" class="form-control" placeholder="Icon">
+                            <small class="text-danger">*bisa memilih lebih dari 1 gambar</small>
                         </div>
                     </div>
                     <!-- /.card-body -->

@@ -105,7 +105,7 @@ class ProdukController extends Controller
         for ($i=0; $i <count($spesifikasi); $i++) { 
             if (!empty($spesifikasi[$i])) {
                 ProdukDetail::create([
-                    'produk_id' => '6',
+                    'produk_id' => $last_id->id,
                     'detail_jenis' => 'detail',
                     'detail_title' => $spesifikasi[$i],
                     'detail_desc' => $spesifikasi_detail[$i],
