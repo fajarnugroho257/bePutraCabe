@@ -89,14 +89,6 @@ class AboutMeController extends Controller
                 }
                 $detail->pref_value = $fileName;
                 $detail->update();
-                // }
-                // insert
-                // foreach ($imageName as $key => $value) {
-                //     Pref::create([
-                //         'pref_name' => 'pref_image',
-                //         'pref_value' => $value,
-                //     ]);
-                // }
             }
         }
         return redirect()->route('tentangKami')->with('success', 'Data Berhasil disimpan');

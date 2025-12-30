@@ -5,6 +5,7 @@ namespace App\Http\Controllers\website;
 use App\Http\Controllers\Controller;
 use App\Models\website\Galery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class GaleryController extends Controller
 {
@@ -52,6 +53,12 @@ class GaleryController extends Controller
     {
         $detail = Galery::find($id);
         if ($detail->delete()) {
+            // delete dulu
+            $path = public_path( $detail->image_path . '/' . $detail->image_name);
+            $detail->delete();
+            if (File::exists($path)) {
+                File::delete($path);
+            }
             return redirect()->route('galery')->with('success', 'Data berhasil dihapus');
         } else {
             return redirect()->route('galery')->with('error', 'Data gagal dihapus');

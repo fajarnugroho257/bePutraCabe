@@ -167,7 +167,8 @@ class ProdukController extends Controller
             ]);
             // upload
             $produk_image = $request->file('produk_image');
-            // 
+            // delete file sebelumnya
+            File::delete(public_path($detail->produk_path . "/" . $detail->produk_image));
             $ext  = $produk_image->getClientOriginalExtension();
             $fileName = $request->produk_nama . "." . $ext;
             // 

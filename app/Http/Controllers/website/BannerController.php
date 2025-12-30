@@ -5,6 +5,7 @@ namespace App\Http\Controllers\website;
 use App\Http\Controllers\Controller;
 use App\Models\website\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BannerController extends Controller
 {
@@ -106,11 +107,14 @@ class BannerController extends Controller
         // 
         $banner_path = $detail->banner_path;
         if ($request->hasFile('banner_image')) {
+            // delete
+            File::delete(public_path($detail->banner_path));
+            // 
             $tujuan_upload = 'image/banner';
             $file = $request->file('banner_image');
             //
             if (!$file->move($tujuan_upload, $file->getClientOriginalName())) {
-                return redirect()->route('addBanner')->with('error', 'Gagal simpan foto');
+                return redirect()->route('editBanner', $detail->id)->with('error', 'Gagal simpan foto');
             }
             // name
             $banner_path = $tujuan_upload . "/" . $file->getClientOriginalName();
@@ -137,6 +141,7 @@ class BannerController extends Controller
             return redirect()->route('banner')->with('error', 'Data tidak ditemukan');
         }
         if ($detail->delete()) {
+            File::delete(public_path($detail->banner_path));
             return redirect()->route('banner')->with('success', 'Data Berhasil dihapus');
         } else {
             return redirect()->route('banner')->with('error', 'Data gagal dihapus');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\website;
 use App\Http\Controllers\Controller;
 use App\Models\website\Why;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class WhyChooseMeController extends Controller
 {
@@ -110,6 +111,12 @@ class WhyChooseMeController extends Controller
             $file = $request->file('why_image');
             $ext  = $file->getClientOriginalExtension();
             $fileName = $request->why_title . "." . $ext;
+            // delete dulu
+            $path = public_path( $detail->why_path . '/' . $detail->why_image);
+            $detail->delete();
+            if (File::exists($path)) {
+                File::delete($path);
+            }
             //
             if (!$file->move($tujuan_upload, $fileName)) {
                 return redirect()->route('addWhyChooseMe')->with('error', 'Gagal simpan foto');
@@ -133,9 +140,14 @@ class WhyChooseMeController extends Controller
     {
         $detail = Why::find($id);
         if (empty($detail)) {
+            // delete dulu
+            $path = public_path( $detail->why_path . '/' . $detail->why_image);
+            $detail->delete();
+            if (File::exists($path)) {
+                File::delete($path);
+            }
             return redirect()->route('whyChooseMe')->with('error', 'Data tidak ditemukan');
         }
-        $detail->delete();
         return redirect()->route('whyChooseMe')->with('success', 'Data Berhasil dihapus');
     }
 }

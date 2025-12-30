@@ -7,6 +7,7 @@ use App\Models\website\Artikel;
 use App\Models\website\Author;
 use App\Models\website\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ArtikelController extends Controller
 {
@@ -119,6 +120,7 @@ class ArtikelController extends Controller
         ]);
         $tujuan_image = 'image/artikel';
         $detail = Artikel::find($id);
+        // dd($detail);
         if (empty($detail)) {
             return redirect()->route('artikelData')->with('error', 'Data tidak ditemukan');
         }
@@ -131,6 +133,11 @@ class ArtikelController extends Controller
             $artikel_image = $request->file('artikel_image');
             $extension2 = $artikel_image->extension();
             $nama_file = $artikel_title . '.' . $extension2;
+            // delete dulu
+            $path = public_path( $detail->artikel_path . '/' . $detail->artikel_name);
+            if (File::exists($path)) {
+                File::delete($path);
+            }
             // dd($nama_file);
             $artikel_image->move($tujuan_image, $nama_file);
         }
@@ -152,8 +159,18 @@ class ArtikelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $slug)
     {
-        //
+        $detail = Artikel::where('artikel_slug', $slug)->first();
+        if (empty($detail)) {
+            return redirect()->route('artikelData')->with('error', 'Data tidak ditemukan');
+        }
+        // delete dulu
+        $path = public_path( $detail->artikel_path . '/' . $detail->artikel_name);
+        $detail->delete();
+        if (File::exists($path)) {
+            File::delete($path);
+        }
+        return redirect()->route('artikelData')->with('success', 'Data Berhasil dihapus');
     }
 }

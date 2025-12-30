@@ -83,6 +83,8 @@
                             <label>Gambar</label>
                             <input type="file" value="{{ old('artikel_image') }}" name="artikel_image" class="form-control"placeholder="Icon">
                             <small class="text-danger">*kosongi jika tidak ingin merubah gambar</small>
+                            <br>
+                            <img class="img-fluid img-thumbnail" src="{{ asset($detail->artikel_path . '/' . $detail->artikel_name) }}" alt="{{ $detail->artikel_name }}" style="height: 100%; width: 150px">
                         </div>
                         <div class="row">
                             <div class="col-md-6">
