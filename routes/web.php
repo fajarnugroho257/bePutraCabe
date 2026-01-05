@@ -84,7 +84,8 @@ Route::get('/generate-sitemap', function () {
         );
     }
 
-    $sitemap->writeToFile(public_path('sitemap.xml'));
+    // $sitemap->writeToFile(public_path('sitemap.xml'));
+    $sitemap->writeToFile('/home/agbb9799/public_html/putracabe/sitemap.xml');
 
     return 'Sitemap berhasil dibuat!';
 });

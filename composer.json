@@ -15,7 +15,7 @@
         "laravel/tinker": "^2.8",
         "mike42/escpos-php": "^4.0",
         "spatie/browsershot": "^3.61",
-        "spatie/laravel-sitemap": "^7.3",
+        "spatie/laravel-sitemap": "7.0",
         "tymon/jwt-auth": "2.1.1"
     },
     "require-dev": {
