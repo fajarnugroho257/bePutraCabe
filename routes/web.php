@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
@@ -23,7 +25,9 @@ use App\Http\Controllers\website\TestimoniController;
 use App\Http\Controllers\website\VisiMisiController;
 use App\Http\Controllers\website\WebsiteController;
 use App\Http\Controllers\website\WhyChooseMeController;
+use App\Models\website\Artikel;
 use App\Models\website\Author;
+use App\Models\website\Produk;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +39,56 @@ use App\Models\website\Author;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// sitemaps
+Route::get('/generate-sitemap', function () {
+    $sitemap = Sitemap::create()
+        ->add(Url::create('/')
+            ->setPriority(1.0)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY))
+        ->add(Url::create('/produk')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/tentang-kami')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/cara-pesan')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/kontak-kami')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/artikel')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+
+
+    // Tambahkan halaman dinamis dari database
+    $produks = Produk::all();
+    foreach ($produks as $produk) {
+        $sitemap->add(
+            Url::create("/produk/{$produk->slug}")
+                ->setLastModificationDate($produk->updated_at)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setPriority(0.7)
+        );
+    }
+
+    $artikels = Artikel::all();
+    foreach ($artikels as $artikel) {
+        $sitemap->add(
+            Url::create("/artikel/{$artikel->artikel_slug}")
+                ->setLastModificationDate($artikel->updated_at)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setPriority(0.7)
+        );
+    }
+
+    $sitemap->writeToFile(public_path('sitemap.xml'));
+
+    return 'Sitemap berhasil dibuat!';
+});
+
 // website
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('/produk', [WebsiteController::class, 'katalog'])->name('katalog');

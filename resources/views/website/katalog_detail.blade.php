@@ -41,7 +41,7 @@
                             </span>
                             <span class="ml-2 text-gray-500">({{ $detail->produk_rating }})</span>
                         </div>
-                        <p class="text-4xl font-bold text-red-600 mb-6">Rp {{ number_format($detail->produk_harga, 0, ', ', '.') }}<span class="text-xl text-gray-500 font-normal"> / Kg</span></p>
+                        {{-- <p class="text-4xl font-bold text-red-600 mb-6">Rp {{ number_format($detail->produk_harga, 0, ', ', '.') }}<span class="text-xl text-gray-500 font-normal"> / Kg</span></p> --}}
 
                         <p class="text-gray-700 mb-6 leading-relaxed">
                             {{ $detail->produk_short_desc }}
