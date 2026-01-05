@@ -18,6 +18,8 @@ use App\Models\website\VisiMisi;
 use App\Models\website\Why;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 class WebsiteController extends Controller
 {
@@ -205,5 +207,30 @@ class WebsiteController extends Controller
         return view('website.artikel', $data);
     }
     
+    public function generate()
+    {
+        $sitemap = Sitemap::create()
+        ->add(Url::create('/')
+            ->setPriority(1.0)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY))
+        ->add(Url::create('/produk')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/tentang-kami')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/cara-pesan')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/kontak-kami')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+        ->add(Url::create('/artikel')
+            ->setPriority(0.8)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+        
+        // Gunakan render untuk mengecek apakah error 'hint path' hilang
+        return $sitemap->render('xml'); 
+    }
 
 }

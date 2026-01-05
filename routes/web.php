@@ -92,6 +92,7 @@ Route::get('/generate-sitemap', function () {
 
 // website
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
+Route::get('/test', [WebsiteController::class, 'generate'])->name('generate');
 Route::get('/produk', [WebsiteController::class, 'katalog'])->name('katalog');
 Route::get('/produk/{slug}', [WebsiteController::class, 'katalog_detail'])->name('katalogDetail');
 Route::get('/tentang-kami', [WebsiteController::class, 'about'])->name('about');
