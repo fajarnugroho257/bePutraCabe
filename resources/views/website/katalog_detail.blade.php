@@ -135,7 +135,12 @@
                                 <img src="{{ asset($produk->produk_path ."/". $produk->produk_image) }}" alt="Cabai Rawit Merah" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="p-4">
                                     <h4 class="text-lg font-semibold text-gray-900 truncate">{{ $produk->produk_nama }}</h4>
-                                    <p class="text-xl font-bold text-red-600 mt-1">Rp {{ number_format($produk->produk_harga, 0, ', ', '.') }} / Kg</p>
+                                    {{-- <p class="text-xl font-bold text-red-600 mt-1">Rp {{ number_format($produk->produk_harga, 0, ', ', '.') }} / Kg</p> --}}
+                                    <span class="flex">
+                                        @for ($i = 0; $i < $produk->produk_rating; $i++)
+                                            <i class="fa fa-star text-yellow-500 mr-1"></i> 
+                                        @endfor
+                                    </span>
                                     <span class="text-sm text-gray-500">Stok: Tersedia</span>
                                 </div>
                             </a>

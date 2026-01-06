@@ -105,7 +105,7 @@ Route::get('/artikel/{slug}', [WebsiteController::class, 'artikel_detail'])->nam
 
 // login
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::get('/login-web', [LoginController::class, 'index'])->name('login');
     Route::post('/login-process', [LoginController::class, 'loginProcess'])->name('login-process');
 });
 

@@ -159,6 +159,11 @@
                                 {{-- <span class="inline-block bg-black/10 text-sage text-xs px-3 py-1 rounded-full font-medium mb-2"></span> --}}
                                 <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-800 mb-1">{{ $produk->produk_nama }}</h3>
                                 {{-- <p class="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-4">Rp {{ number_format($produk->produk_harga, 0, ', ', '.') }} / Kg</p> --}}
+                                <span class="flex">
+                                    @for ($i = 0; $i < $produk->produk_rating; $i++)
+                                        <i class="fa fa-star text-yellow-500 mr-1 mb-3"></i> 
+                                    @endfor
+                                </span>
                                 <a href="{{ route('katalogDetail', $produk->slug) }}" class="w-full block text-sm md:text-base text-center bg-red-600 text-white py-1 md:py-2 rounded-lg hover:bg-red-500 transition">
                                     Lihat Selengkapnya
                                 </a>

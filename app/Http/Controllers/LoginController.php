@@ -18,7 +18,8 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login');
+        $data['title'] = 'Login';
+        return view('login', $data);
     }
 
     public function loginProcess(Request $request)
@@ -46,6 +47,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('login');
     }
 }
