@@ -6,27 +6,33 @@
         <title>{{ $title_meta }}</title>
         <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/png">
         <!-- Google tag (gtag.js) -->
-
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PJRZRWTS');</script>
+        <!-- End Google Tag Manager -->
         {{-- verification --}}
         
         <meta name="author" content="https://www.instagram.com/putracabe77" />
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ $title_meta }}">
         <meta name="twitter:description" content="{{ $meta_description }}">
-        <meta name="twitter:image" content="https://putracabe.com/image/produk_kami/title/bata%20tempel%20dengan%20motif%20derabut%20kelapa%20warna%20klasik%20natural.jpg">
-        <meta property="og:see_also" content="https://www.instagram.com/ag.batatempel/" />
+        <meta name="twitter:image" content="https://putracabe.com/images/putraCabe.png">
+        <meta property="og:see_also" content="https://www.instagram.com/putracabe77" />
         <link rel="canonical" href="{{ url()->current() }}">
         <meta property="og:type" content="place" />
         <meta property="og:title" content="{{ $title_meta }}" />
         <meta property="og:description" content="{{ $meta_description }}" />
-        <meta property="og:image" content="https://putracabe.com/image/produk_kami/title/bata%20tempel%20dengan%20motif%20derabut%20kelapa%20warna%20klasik%20natural.jpg" />
+        <meta property="og:image" content="https://putracabe.com/images/putraCabe.png" />
         <meta property="og:url" content="https://putracabe.com">
         <meta property="place:location:latitude" content="-7.467738" />
         <meta property="place:location:longitude" content="110.194969" />
         <meta property="place:location:street-address" content="Jalan raya bandongan, magelang, desa trasan, dusun paingan, kecamatan bandongan" />
         <meta property="place:location:locality" content="Kabupaten Magelang" />
         <meta property="place:location:region" content="Jawa Tengah" />
-        <meta property="place:location:postal-code" content="56161" />
+        <meta property="place:location:postal-code" content="56151" />
         <meta property="place:location:country" content="indonesia" />
         <meta property="og:locale" content="id_ID" />
         <meta property="og:site_name" content="Puta Cabe Perusahaan Perdagangan Cabai" />
@@ -36,7 +42,7 @@
             "@type": "Place",
             "name": "Puta Cabe Perusahaan Perdagangan Cabai",
             "description": "{{ $meta_description }}",
-            "image": "https://putracabe.com/image/produk_kami/title/bata%20tempel%20dengan%20motif%20derabut%20kelapa%20warna%20klasik%20natural.jpg",
+            "image": "https://putracabe.com/images/putraCabe.png",
             "url": "https://putracabe.com",
             "telephone": "+{{ $no_wa }}",
             "address": {
@@ -44,7 +50,7 @@
                 "streetAddress": "Jalan raya bandongan, magelang, desa trasan, dusun paingan, kecamatan bandongan",
                 "addressLocality": "Kabupaten Magelang",
                 "addressRegion": "Jawa Tengah",
-                "postalCode": "56161",
+                "postalCode": "56151",
                 "addressCountry": "indonesia"
             },
             "geo": {
@@ -55,10 +61,10 @@
             "hasMap": "https://www.google.com/maps?q=-7.467738,110.194969"
             }
         </script>
-        <meta name="keywords" content="">
+        <meta name="keywords" content="putra cabe, putracabe, supplier cabai segar, distributor cabai magelang, jual cabai merah keriting, grosir cabai indonesia, suplier cabe restoran, agen cabai murah, cabai segar tangan pertama, pasokan cabai B2B, distributor sayuran magelang">
         <meta name="description" content="{{ $meta_description }}">
         <meta property="og:description" content="{{ $meta_description }}">
-        <meta name="news_keywords" content="">
+        <meta name="news_keywords" content="putra cabe, putracabe, supplier cabai segar, distributor cabai magelang, jual cabai merah keriting, grosir cabai indonesia, suplier cabe restoran, agen cabai murah, cabai segar tangan pertama, pasokan cabai B2B, distributor sayuran magelang">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -73,6 +79,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <body class="font-poppins">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJRZRWTS"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <nav id="main-navbar" class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-20 items-center">
