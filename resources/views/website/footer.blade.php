@@ -1,6 +1,6 @@
     {{-- <div class="px-5 p-5 md:pb-5 md:pt-14 bg-gray-800 text-white md:flex md:justify-between md:px-[175px] md:gap-7" style="background: #FFF,url(images/bg-footer.png); background-size: cover; background-attachment: fixed;background-position: center;background-repeat: no-repeat;" > --}}
-        <div class="px-5 p-5 md:pb-5 md:pt-14 bg-gray-800 text-white md:flex md:justify-between md:px-[175px] md:gap-7" >
-            <div class="grid grid-cols-1 md:flex md:justify-between mb-10 w-full">
+        <div class="px-5 p-5 md:pb-5 md:pt-14 bg-gray-800 text-white md:px-[175px] md:gap-7" >
+            <div class="grid grid-cols-1 md:grid-cols-3 mb-10 w-full">
                 <div class="">
                     <div class="mb-3 md:justify-start">
                         <h4 class="text-3xl font-semibold font-serif">PutraCabe</h4>
@@ -8,8 +8,13 @@
                     @php
                         $no_wa = App\Models\website\Pref::where('pref_name', 'no_wa')->first();
                         $no_wa_zero = App\Models\website\Pref::where('pref_name', 'no_wa_zero')->first();
+                        $alamat = App\Models\website\Pref::where('pref_name', 'alamat')->first();
                     @endphp
                     <div class="grid text-white gap-2 text-sm">
+                        <div class="flex gap-2 items-center">
+                            <img class="w-6 h-7" src="{{ asset('images/place.png') }}" alt="">
+                            <a href="javascript:;" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">{{ $alamat->pref_value }}</a>
+                        </div>
                         <div class="flex gap-2 items-center">
                             <img class="w-5 h-5" src="{{ asset('images/wa.png') }}" alt="">
                             <a href="https://api.whatsapp.com/send?phone=+{{ $no_wa->pref_value }}&text=Halo Putra Cabe, Bisa meminta informasi lebih lanjut?" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">{{ $no_wa_zero->pref_value }}</a>
@@ -17,6 +22,10 @@
                         <div class="flex gap-2 items-center">
                             <img class="w-5 h-5" src="{{ asset('images/instagram.png') }}" alt="">
                             <a href="https://www.instagram.com/putracabe77" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">@putracabe77</a>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <img class="w-5 h-5" src="{{ asset('images/tiktok.png') }}" alt="">
+                            <a href="https://www.tiktok.com/@putracabe77?_r=1&_t=ZS-92qMI5FPNB6" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">@putracabe77</a>
                         </div>
                     </div>
                 </div>
