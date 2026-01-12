@@ -12,7 +12,7 @@
                     @endphp
                     <div class="grid text-white gap-2 text-sm">
                         <div class="flex gap-2 items-center">
-                            <img class="w-6 h-7" src="{{ asset('images/place.png') }}" alt="">
+                            <img class="w-6 h-6" src="{{ asset('images/alamat-icon.png') }}" alt="">
                             <a href="javascript:;" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">{{ $alamat->pref_value }}</a>
                         </div>
                         <div class="flex gap-2 items-center">
@@ -24,7 +24,7 @@
                             <a href="https://www.instagram.com/putracabe77" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">@putracabe77</a>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <img class="w-5 h-5" src="{{ asset('images/tiktok.png') }}" alt="">
+                            <img class="w-5 h-5" src="{{ asset('images/tiktok-icon.png') }}" alt="">
                             <a href="https://www.tiktok.com/@putracabe77?_r=1&_t=ZS-92qMI5FPNB6" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">@putracabe77</a>
                         </div>
                     </div>

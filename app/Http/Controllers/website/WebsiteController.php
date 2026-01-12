@@ -147,8 +147,12 @@ class WebsiteController extends Controller
         }
         $data['title_meta'] = 'Artikel | ' . $detail->artikel_title ;
         $data['meta_description'] = $detail->artikel_title;
-        // 
+        // tambah view
         $data['detail'] = $detail;
+        $view = $detail->artikel_views + 1;
+        $detail->artikel_views = $view;
+        $detail->save();
+        // 
         $data['rs_kategori'] = DB::select("SELECT a.id, a.name, a.color, res.total
                                 FROM artikel_kategori a 
                                 LEFT JOIN (
