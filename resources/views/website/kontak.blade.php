@@ -14,12 +14,16 @@
             <p class="">Kami siap melayani Anda. Jangan ragu untuk menghubungi kami melalui telepon, WhatsApp, atau media sosial.</p>
             <div class="flex justify-center mt-5 md:mt-10 text-white gap-2 text-sm">
                 <div class="flex gap-2 items-center bg-[#24cd3d] px-2 py-1 rounded w-fit ">
-                    <img class="w-5 h-5" src="{{ asset('images/wa.png') }}" alt="">
+                    <img class="w-5 h-5" src="{{ asset('images/wa.png') }}" alt="whatsapp putra cabe">
                     <a href="https://api.whatsapp.com/send?phone=+{{ $no_wa->pref_value }}&text=Halo Putra Cabe, Bisa meminta informasi lebih lanjut?" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">{{ $no_wa_zero->pref_value }}</a>
                 </div>
                 <div class="flex gap-2 items-center bg-red-600 px-2 py-1 rounded w-fit ">
-                    <img class="w-5 h-5" src="{{ asset('images/instagram.png') }}" alt="">
+                    <img class="w-5 h-5" src="{{ asset('images/instagram.png') }}" alt="putracabe77">
                     <a href="https://www.instagram.com/putracabe77" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">@putracabe77</a>
+                </div>
+                <div class="flex gap-2 items-center bg-gray-600 px-2 py-1 rounded w-fit ">
+                    <img class="w-5 h-5" src="{{ asset('images/tiktok-icon.png') }}" alt="putracabe77">
+                    <a href="https://www.tiktok.com/@putracabe77?_r=1&_t=ZS-92qMI5FPNB6" target="blank" class="hover:text-colorWood transition delay-100 duration-300 ease-in-out">@putracabe77</a>
                 </div>
             </div>
         </div>
